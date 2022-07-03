@@ -20,7 +20,7 @@ function fibonacci($num): int
     return fibonacci($num - 1) + fibonacci($num - 2);
 }
 
-echo fibonacci(19);
+//echo fibonacci(19);
 
 function fibonacciFn($num): int
 {
@@ -32,3 +32,22 @@ function fibonacciFn($num): int
 
     return $sequence[$num];
 }
+
+function nestedAdd(array $arr)
+{
+    $len = count($arr);
+    $sum = 0;
+
+    for ($i = 0; $i < $len; $i++) {
+        if (is_array($arr[$i])) {
+            $sum += nestedAdd($arr[$i]);
+        } else {
+            $sum += $arr[$i];
+        }
+    }
+
+    return $sum;
+}
+
+//echo nestedAdd([10, [12, 14, [1], [16, [20]]], 10, 11]);
+echo nestedAdd([]);
