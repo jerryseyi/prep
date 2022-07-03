@@ -27,10 +27,7 @@ for ($i = 0; $i < 4; $i++) {
 
         $sum = $top + $middle + $bottom;
         $sums[] = $sum;
-
-        var_dump($bottom);
-        die();
     }
 }
 
-//print_r($sums);
+print_r($sums);
