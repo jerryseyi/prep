@@ -16,4 +16,4 @@ $arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var_dump(crossAdd($arr));
 
-// big O of n^2
+// big O of n
