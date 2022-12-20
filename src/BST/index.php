@@ -23,3 +23,12 @@ echo "\n";
 echo $tree->search(14) ? "Found" : "Not Found";
 echo "\n";
 echo $tree->search(36) ? "Found" : "Not Found";
+
+echo '<pre>';
+$tree->otraverse($tree->root, 'pre-order');
+echo "\n";
+$tree->otraverse($tree->root, 'in-order');
+echo "\n";
+$tree->otraverse($tree->root, 'post-order');
+echo "\n";
+echo '</pre>';
