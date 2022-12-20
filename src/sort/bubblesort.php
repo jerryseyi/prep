@@ -1,6 +1,7 @@
 <?php
 
-function bubbleSort(array $arr) : array {
+function bubbleSort(array $arr): array
+{
     $len = count($arr);
 
     for ($i = 0; $i < $len; $i++) {
@@ -11,6 +12,26 @@ function bubbleSort(array $arr) : array {
                 $arr[$j] = $tmp;
             }
         }
+    }
+
+    return $arr;
+}
+
+function secondBubbleSort(array $arr): array
+{
+    $len = count($arr);
+
+    for ($i = 0; $i < $len; $i++) {
+        $swapped = false;
+        for ($j = 0; $j < $len - 1; $j++) {
+            if ($arr[$j] > $arr[$j + 1]) {
+                $temp = $arr[$j + 1];
+                $arr[$j + 1] = $arr[$j];
+                $arr[$j] = $temp;
+                $swapped = true;
+            }
+        }
+        if (!$swapped) break;
     }
 
     return $arr;
