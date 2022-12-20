@@ -68,6 +68,47 @@ class BST
         }
     }
 
+    public function otraverse(Node $node, string $type = "in-order"): void
+    {
+        switch ($type) {
+            case "in-order":
+                $this->inOrder($node);
+                break;
+            case "pre-order":
+                $this->preOrder($node);
+                break;
+            case "post-order":
+                $this->postOrder($node);
+                break;
+        }
+    }
+
+    public function preOrder(?Node $node): void
+    {
+        if ($node) {
+            echo $node->data . " ";
+            if ($node->left) $this->otraverse($node->left);
+            if ($node->right) $this->otraverse($node->right);
+        }
+    }
+
+    public function inOrder(?Node $node): void
+    {
+        if ($node) {
+            if ($node->left) $this->otraverse($node->left);
+            echo $node->data . " ";
+            if ($node->right) $this->otraverse($node->right);
+        }
+    }
+
+    public function postOrder(?Node $node): void
+    {
+        if ($node) {
+            if ($node->left) $this->otraverse($node->left);
+            if ($node->right) $this->otraverse($node->right);
+            echo $node->data . " ";
+        }
+    }
     /**
      * @param int $data
      * @return Node|bool|null
