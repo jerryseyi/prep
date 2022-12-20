@@ -34,7 +34,7 @@ class BST
                 if ($node->right) {
                     $node = $node->right;
                 } else {
-                    $node->right = new Node($data);
+                    $node->right = new Node($data, $node);
                     $node = $node->right;
                     break;
                 }
@@ -42,7 +42,7 @@ class BST
                 if ($node->left) {
                     $node = $node->left;
                 } else {
-                    $node->left = new Node($data);
+                    $node->left = new Node($data, $node);
                     $node = $node->left;
                     break;
                 }
@@ -91,6 +91,12 @@ class BST
         }
 
         return $node;
+    }
+
+    public function remove(int $data): void
+    {
+        $node = $this->search($data);
+        if ($node) $node->delete();
     }
 
 }
