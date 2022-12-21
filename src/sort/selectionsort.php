@@ -10,6 +10,11 @@ function selectionSort(array $arr): array
             if ($arr[$j] < $arr[$min]) {
                 $min = $j;
             }
+            //--------------------------------------
+            // for descending order
+            // $arr[$j] > $arr[$min]
+            // replace $min with $max
+            //-------------------------------------
         }
 
         if ($min != $i) {
