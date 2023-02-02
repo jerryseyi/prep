@@ -11,3 +11,11 @@ function search(array $numbers, int $needle) : bool {
 
     return false;
 }
+
+$numbers = range(1, 200, 5);
+
+if (search($numbers, 31)) {
+    echo "found";
+} else {
+    echo "Not found";
+}
